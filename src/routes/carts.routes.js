@@ -1,16 +1,16 @@
-import {Router} from 'express';
+import { Router } from 'express';
 import { readFile, writeFile, productsFile, cartsFile } from '../utils/utils.js';
 
 const route = Router();
 
 route.post('/', async (req, res) => {
   try {
-    const { id } = req.body; // id del producto enviado desde el botón
+    const { id } = req.body;
     const products = await readFile(productsFile);
     const carts = await readFile(cartsFile);
 
     const product = products.find(p => p.id === id);
-    
+
     carts.push(product);
     await writeFile(cartsFile, carts);
 

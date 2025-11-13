@@ -1,50 +1,42 @@
 [
   {
     "id": 1,
-    "title": "Microscopio binocular",
-    "price": 250000,
-    "description": "Microscopio óptico con aumento de hasta 1000x, ideal para laboratorio.",
-    "stock": 5,
-    "category": "instrumental"
+    "title": "Heladera No Frost 320L",
+    "price": 485000,
+    "description": "Heladera de bajo consumo con tecnología No Frost y freezer superior.",
+    "stock": 12,
+    "category": "Heladeras"
   },
   {
     "id": 2,
-    "title": "Microscopio binocular",
-    "price": 250000,
-    "description": "Microscopio óptico con aumento de hasta 1000x, ideal para laboratorio.",
-    "stock": 5,
-    "category": "instrumental"
+    "title": "Lavarropas Automático 8kg",
+    "price": 399000,
+    "description": "Lavarropas digital con múltiples programas, centrifugado de 1200 RPM.",
+    "stock": 8,
+    "category": "Lavarropas"
   },
   {
     "id": 3,
-    "title": "Microscopio binocular",
-    "price": 250000,
-    "description": "Microscopio óptico con aumento de hasta 1000x, ideal para laboratorio.",
-    "stock": 5,
-    "category": "instrumental"
+    "title": "Microondas 28L Grill",
+    "price": 152000,
+    "description": "Microondas con función grill, pantalla táctil y 7 niveles de potencia.",
+    "stock": 20,
+    "category": "Microondas"
   },
   {
     "id": 4,
-    "title": "Microscopio binocular",
-    "price": 250000,
-    "description": "Microscopio óptico con aumento de hasta 1000x, ideal para laboratorio.",
-    "stock": 5,
-    "category": "instrumental"
+    "title": "Aspiradora Sin Bolsa 2000W",
+    "price": 89000,
+    "description": "Aspiradora ciclónica con depósito reutilizable y accesorios multipropósito.",
+    "stock": 15,
+    "category": "Aspiradoras"
   },
   {
     "id": 5,
-    "title": "4545",
-    "price": 45454,
-    "description": "454545",
-    "stock": 454545,
-    "category": "454545"
-  },
-  {
-    "id": 6,
-    "title": "121212",
-    "price": 12121,
-    "description": "212121",
-    "stock": 12121,
-    "category": "21211212"
+    "title": "Cocina Eléctrica 4 Hornallas",
+    "price": 310000,
+    "description": "Cocina eléctrica con horno autolimpiante y encendido automático.",
+    "stock": 10,
+    "category": "Cocinas"
   }
 ]

@@ -1,4 +1,4 @@
-import {Router} from 'express';
+import { Router } from 'express';
 import { readFile, writeFile, productsFile, cartsFile } from '../utils/utils.js';
 
 const route = Router();
@@ -8,7 +8,7 @@ route.get('/', async (req, res) => {
     const products = await readFile(productsFile);
     res.render('home', {
       title: 'Listado de productos',
-      products 
+      products
     });
   } catch (error) {
     console.error('Error al renderizar home:', error);
@@ -18,10 +18,11 @@ route.get('/', async (req, res) => {
 
 route.get('/carts', async (req, res) => {
   try {
-    const carts = await readFile(cartsFile); 
+    const carts = await readFile(cartsFile);
     res.render('carts', {
       title: 'Carrito de compras',
-      carts }); 
+      carts
+    });
   } catch (error) {
     console.error('Error al renderizar carts:', error);
     res.status(500).send('Error interno del servidor');
@@ -33,7 +34,7 @@ route.get('/realTimeProducts', async (req, res) => {
     const products = await readFile(productsFile);
     res.render('realTimeProducts', {
       title: 'WebSocket - Productos',
-      products 
+      products
     });
   } catch (error) {
     console.error('Error al renderizar home:', error);
@@ -41,9 +42,4 @@ route.get('/realTimeProducts', async (req, res) => {
   }
 });
 
-
 export default route;  
-
-route.get('/socket', (req, res) => {
-res.render('realTimeProducts', {})
-})
