@@ -1,3 +1,4 @@
+//agregar productos al carrito
 document.addEventListener('DOMContentLoaded', () => {
   const botones = document.querySelectorAll('.btn-agregar');
 
@@ -22,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+//eliminar productos del carrito
 document.addEventListener('DOMContentLoaded', () => {
   const botonesEliminar = document.querySelectorAll('.btn-eliminar');
 

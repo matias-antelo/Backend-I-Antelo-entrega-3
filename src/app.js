@@ -9,6 +9,7 @@ import { readFile, writeFile, productsFile } from './utils/utils.js';
 const app = express()
 app.use(express.json());
 
+//conexion con handlebars
 app.engine('handlebars', Handlebars.engine());
 app.set('views', path.join(process.cwd(), '/src/views'))
 app.set('view engine', 'handlebars');

@@ -5,7 +5,7 @@ import path from 'node:path';
 const productsFile = path.resolve('src/data/products.json');
 const cartsFile = path.resolve('src/data/carts.json');
 
-// Funciones de lectura y escritura de archivos
+// Funciones de lectura de archivos
 const readFile = async (path) => {
   try {
     if (!fs.existsSync(path)) return [];
@@ -15,7 +15,7 @@ const readFile = async (path) => {
     console.error('Error al leer archivo:', error);
   }
 };
-
+// Funciones de escritura de archivos
 const writeFile = async (path, data) => {
   try {
     await fs.promises.writeFile(path, JSON.stringify(data, null, 2));

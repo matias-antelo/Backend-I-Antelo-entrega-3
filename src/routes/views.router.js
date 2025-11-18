@@ -3,6 +3,7 @@ import { readFile, writeFile, productsFile, cartsFile } from '../utils/utils.js'
 
 const route = Router();
 
+// Renderiza la vista de home con la lista de productos
 route.get('/', async (req, res) => {
   try {
     const products = await readFile(productsFile);
@@ -16,6 +17,7 @@ route.get('/', async (req, res) => {
   }
 });
 
+// Renderiza la vista del carrito de compras
 route.get('/carts', async (req, res) => {
   try {
     const carts = await readFile(cartsFile);
@@ -29,6 +31,7 @@ route.get('/carts', async (req, res) => {
   }
 });
 
+// Renderiza la vista de productos en /realIimeProducts
 route.get('/realTimeProducts', async (req, res) => {
   try {
     const products = await readFile(productsFile);

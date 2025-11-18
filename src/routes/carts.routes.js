@@ -3,6 +3,7 @@ import { readFile, writeFile, productsFile, cartsFile } from '../utils/utils.js'
 
 const route = Router();
 
+// Agrega un producto al carrito
 route.post('/', async (req, res) => {
   try {
     const { id } = req.body;
@@ -20,6 +21,7 @@ route.post('/', async (req, res) => {
   }
 });
 
+// Elimina un producto del carrito
 route.delete('/', async (req, res) => {
   try {
     const { id } = req.body;

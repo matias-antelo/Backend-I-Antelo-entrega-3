@@ -45,17 +45,16 @@ Este proyecto implementa un servidor Node.js con Express que gestiona productos 
 
 <h2>📄 Documentación de Métodos</h2>
 
-<h3>🌍 Servidor Principal</h3>
+<h3>🌍 APP</h3>
 
 <h4>app.js</h4>
 <p>
 - <strong>new Server()</strong>: Crea servidor WebSocket (Socket.io) para comunicación en tiempo real.<br>
-- <strong>socket.on('connection')</strong>: Escucha nuevas conexiones de clientes.<br>
 - <strong>socket.on('nuevoProducto')</strong>: Recibe producto nuevo, asigna ID, guarda en JSON y emite a todos los clientes.<br>
 - <strong>socket.on('eliminarProducto')</strong>: Elimina producto por ID, actualiza JSON y emite cambios.
 </p>
 
-<h3>🔄 Rutas (routes/)</h3>
+<h3>🔄 ROUTES</h3>
 
 <h4>views.router.js</h4>
 <p>
@@ -72,18 +71,16 @@ Este proyecto implementa un servidor Node.js con Express que gestiona productos 
 - <strong>DELETE /carts</strong>: Elimina un producto del carrito por ID, actualiza carts.json y retorna confirmación.
 </p>
 
-<h3>🛠️ Utilidades (utils/)</h3>
+<h3>🛠️ UTILS</h3>
 
 <h4>utils.js</h4>
 <p>
 <strong>Funciones auxiliares para lectura y escritura de archivos JSON.</strong><br>
 - <strong>readFile(path)</strong>: Lee archivos JSON de forma asíncrona. Retorna array vacío si el archivo no existe, o retorna el contenido.<br>
 - <strong>writeFile(path, data)</strong>: Escribe datos en archivo JSON de forma asíncrona con formato indentado.<br>
-- <strong>productsFile</strong>: Constante que define la ruta de products.json.<br>
-- <strong>cartsFile</strong>: Constante que define la ruta de carts.json.
 </p>
 
-<h3>🖥️ Cliente (public/)</h3>
+<h3>🖥️ PUBLIC </h3>
 
 <h4>home.button.js</h4>
 <p>
@@ -96,30 +93,23 @@ Este proyecto implementa un servidor Node.js con Express que gestiona productos 
 <p>
 <strong>Maneja formulario de creación de productos y comunicación WebSocket en tiempo real.</strong><br>
 
-<h3>👁️ Vistas (views/)</h3>
+<h3>👁️ VIEWS </h3>
 
 <h4>layouts/main.handlebars</h4>
 <p>
 - Estructura HTML principal.<br>
-- Carga CSS desde /styles/style.css.<br>
+- Carga CSS desde style.css.<br>
 - Define header con navegación (enlaces a Productos, Carrito, Crear/eliminar).<br>
 - Footer con información legal y derechos.<br>
 - Placeholder {{{body}}} donde se renderiza el contenido específico de cada página.
 </p>
 
-<h4>layouts/style.css</h4>
-<p>
-<strong>Estilos CSS globales y específicos de componentes.</strong><br>
-- Header y navbar: fondo, colores, navegación horizontal.<br>
-- .grilla: contenedor de productos con flexbox, imagen, separador y contenido.<br>
-- Footer: estilos de líneas decorativas y información.
-</p>
 
 <h4>home.handlebars</h4>
 <p>
 <strong>Página principal con listado de productos.</strong><br>
-- Itera sobre array 'products' (pasado desde servidor).<br>
-- Botón "Agregar al carrito" con data-id para fetch a POST /carts.
+- Itera sobre array 'products'.<br>
+- Botón "Agregar al carrito" a POST /carts.
 </p>
 
 <h4>carts.handlebars</h4>
