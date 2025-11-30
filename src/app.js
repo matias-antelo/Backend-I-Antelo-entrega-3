@@ -11,13 +11,14 @@ const app = express()
 app.use(express.json());
 
 //conexion con mongoose
-mongoose.connect("mongodb+srv://anteloma87:Anteloma23%23@carrito-compras-cluster.6u5aaig.mongodb.net/?appName=Carrito-compras-cluster")
+mongoose.connect("mongodb+srv://anteloma87:Anteloma23%23@carrito-compras-cluster.6u5aaig.mongodb.net/Backend-I")
 .then(() => {
-  console.log("Conectado a la base de datos MongoDB")
+  console.log("Conectado a BBDD")
 })
 .catch(error => {
-  console.error("Error al conectar a la base de datos MongoDB:", error)
+  console.error("Error al conectar a la BBDD", error)
 });
+
 
 //conexion con handlebars
 app.engine('handlebars', Handlebars.engine());
