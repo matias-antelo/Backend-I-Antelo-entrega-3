@@ -7,18 +7,16 @@ import mongoose from 'mongoose';
 
 const app = express()
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 //conexion con mongoose
 mongoose.connect("mongodb+srv://anteloma87:Anteloma23%23@carrito-compras-cluster.6u5aaig.mongodb.net/Backend-I")
-.then(() => {
-  console.log("Conectado a BBDD")
-})
-.catch(error => {
-  console.error("Error al conectar a la BBDD", error)
-});
+.then(() => {console.log("Conectado a BBDD")})
+.catch(error => {console.error("Error al conectar a la BBDD", error)});
 
 //conexion con handlebars
-app.engine('handlebars', Handlebars.engine());
+const hbs = Handlebars.create({helpers: {eq: (a, b) => a == b}});
+app.engine("handlebars", hbs.engine);
 app.set('views', path.join(process.cwd(), '/src/views'))
 app.set('view engine', 'handlebars');
 
@@ -29,6 +27,4 @@ app.use('/styles', express.static(path.join(process.cwd(), 'src/views/layouts'))
 app.use("/", productsRoute);       
 
 
-app.listen(8080, () => {
-  console.log(`Server ON`);
-})
+app.listen(8080, () => {console.log(`Server ON`);})
