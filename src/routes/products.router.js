@@ -47,7 +47,7 @@ router.get("/", async (req, res) => {
 });
 
 // Crear un nuevo producto desde postman
-router.post("/", async (req, res) => {
+router.post("/api/products", async (req, res) => {
   const { title, price, description, stock, category, available } = req.body;
   const newProducts = await productsModel.create({
     title,
@@ -58,6 +58,15 @@ router.post("/", async (req, res) => {
     available,
   });
   res.status(201).json({ status: "ok", payload: newProducts });
+});
+
+//ruta para ver un producto por su id
+router.get("/api/products/:pid", async (req, res) => {
+  const response = await productsModel.findById(req.params.pid).lean();
+  res.render("homeProductId", {
+    title: "Productos almacenados",
+    products: [response],
+  });
 });
 
 export default router;

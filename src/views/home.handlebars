@@ -36,16 +36,13 @@
 
     <p><strong>{{this.title}}</p>
     <p><b>Precio:</b> {{this.price}}</p>
-    <p><b>Categoría:</b> {{this.category}}</p>
-    <p><b>Stock:</b> {{this.stock}}</p>
-    <p><b>Descripcion:</b> {{this.description}}</p>
 
     {{#if this.available}}
     <p style="color: green ">Disponible</p>
     {{else}}
     <p style="color: red">Sin stock</p>
     {{/if}}
-    <button class="btn-agregar" data-id="{{this.id}}">Agregar al carrito</button>
+    <button class="btn-agregar" data-id="{{this.id}}">Mostrar producto</button>
   </div>
 </div>
 {{/each}}

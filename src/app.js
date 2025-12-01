@@ -1,6 +1,6 @@
 import express from 'express'
 import productsRoute from './routes/products.router.js';
-//import cartsRoute from './routes/carts.routes.js';
+import cartsRoute from './routes/carts.routes.js';
 import path from 'node:path';
 import Handlebars from 'express-handlebars';
 import mongoose from 'mongoose';
@@ -24,7 +24,8 @@ app.use(express.static('src/public'));
 app.use('/styles', express.static(path.join(process.cwd(), 'src/views/layouts')));
 
 // Rutas
-app.use("/", productsRoute);       
+app.use("/", productsRoute);  
+app.use("/carts", cartsRoute);     
 
 
 app.listen(8080, () => {console.log(`Server ON`);})

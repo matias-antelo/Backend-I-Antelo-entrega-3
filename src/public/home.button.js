@@ -1,5 +1,5 @@
 //agregar productos al carrito
-document.addEventListener('DOMContentLoaded', () => {
+/*document.addEventListener('DOMContentLoaded', () => {
   const botones = document.querySelectorAll('.btn-agregar');
 
   botones.forEach(btn => {
@@ -15,6 +15,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!response.ok) throw new Error('Error al agregar el producto');
         alert('Producto agregado al carrito');
+      } catch (error) {
+        console.error(error);
+        alert('No se pudo agregar el producto al carrito');
+      }
+    });
+  });
+});*/
+
+document.addEventListener('DOMContentLoaded', () => {
+  const botones = document.querySelectorAll('.btn-agregar');
+  botones.forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const id = btn.dataset.id;
+      
+      try {
+        window.location.href = `/api/products/${id}`;
       } catch (error) {
         console.error(error);
         alert('No se pudo agregar el producto al carrito');
