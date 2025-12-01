@@ -1,22 +1,25 @@
-<main>
-  {{#each products}}
-  <div class="grilla">
-    <div class="grilla-izquierda">
-      <img src="/foto/producto.png" alt="Imagen producto" class="imagen-producto">
-    </div>
-
-    <div class="separador"></div>
-
-    <div class="contenido">
-      <p><strong>Nombre:</strong> {{this.title}}</p>
-      <p><strong>Precio:</strong> ${{this.price}}</p>
-      <p><strong>Descripción:</strong> {{this.description}}</p>
-      <p><strong>Stock:</strong> {{this.stock}}</p>
-      <p><strong>Categoría:</strong> {{this.category}}</p>
-      <button class="btn-agregar" data-id="{{this.id}}">Agregar al carrito</button>
-    </div>
+{{#each products}}
+<div class="grilla">
+  <div class="grilla-izquierda">
+    <img src="/foto/producto.png" alt="Imagen producto" class="imagen-producto">
   </div>
-  {{/each}}
-</main>
+  <div class="separador"></div>
+  <div class="contenido">
+
+    <p><strong>{{this.title}}</p>
+    <p><b>Precio:</b> {{this.price}}</p>
+    <p><b>Categoría:</b> {{this.category}}</p>
+    <p><b>Stock:</b> {{this.stock}}</p>
+    <p><b>Descripcion:</b> {{this.description}}</p>
+
+    {{#if this.available}}
+    <span style="color: green ">Disponible</span>
+    {{else}}
+    <span style="color: red">Sin stock</span>
+    {{/if}}<br>
+    <button class="btn-agregar" data-id="{{this.id}}">Agregar al carrito</button>
+  </div>
+</div>
+{{/each}}
 
 <script src="/home.button.js"></script>

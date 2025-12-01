@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   botones.forEach(btn => {
     btn.addEventListener('click', async () => {
-      const id = parseInt(btn.dataset.id);
+      const id = btn.dataset.id;
 
       try {
         const response = await fetch('/carts', {
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   botonesEliminar.forEach(btn => {
     btn.addEventListener('click', async () => {
-      const id = parseInt(btn.dataset.id);
+      const id = btn.dataset.id;
 
       try {
         const response = await fetch('/carts', {

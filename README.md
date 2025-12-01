@@ -2,7 +2,7 @@
 
 ---
 
-<h1>🧩 Proyecto Backend I - Entrega 2</h1>
+<h1>🧩 Proyecto Backend I - Entrega 3</h1>
 
 Este proyecto implementa un servidor Node.js con Express que gestiona productos y carritos de compra, utilizando archivos JSON para asegurar la persistencia de la información, la implementación de handlebars para la interfaz con el usuario y websockets para actualizaciones en tiempo real.
 
