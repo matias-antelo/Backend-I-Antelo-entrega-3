@@ -37,13 +37,9 @@ app.listen(8080, () => {console.log(`Server ON`);})
 
 /*Se debe entregar
 
-Además, agregar al router de carts los siguientes endpoints:
-DELETE api/carts/:cid/products/:pid deberá eliminar del carrito el producto seleccionado.
-DELETE api/carts/:cid deberá eliminar todos los productos del carrito
 
-PUT api/carts/:cid deberá actualizar todos los productos del carrito con un arreglo de productos.
-PUT api/carts/:cid/products/:pid deberá poder actualizar SÓLO la cantidad de ejemplares del producto 
-por cualquier cantidad pasada desde req.body*/
+PUT api/carts/:cid deberá actualizar todos los productos del carrito con un arreglo de productos.*/
+
 
 
 
