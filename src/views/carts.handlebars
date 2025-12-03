@@ -1,28 +1,53 @@
 <main>
 
   {{!-- SELECTOR DE CARRITOS --}}
-  {{#unless showProducts}}
+
   <div style="display:flex; justify-content:center; margin-top:20px;">
-    <form id="carritoForm" 
-          style="display:flex; align-items:center; gap:15px; background:#f5f5f5; padding:15px; border-radius:10px;">
-      
+    <form id="carritoForm"
+      style="display:flex; align-items:center; gap:15px; background:#f5f5f5; padding:15px; border-radius:10px;">
+
       <p style="margin:0; font-weight:bold;">Seleccionar carrito</p>
 
       <select id="carritoSelect" style="padding:5px 10px;">
         {{#each carts}}
-          <option value="{{this._id}}">{{this._id}}</option>
+        <option value="{{cartNumber}}">{{cartNumber}}</option>
         {{/each}}
       </select>
 
-      <button type="submit" 
+      <button type="submit"
         style="padding:8px 16px; cursor:pointer; background:#3498db; color:white; border:none; border-radius:5px;">
         Abrir carrito
       </button>
-      
+
     </form>
   </div>
-{{/unless}}
 
+
+  {{#each products}}
+  <div class="grilla">
+    <div class="grilla-izquierda">
+      <img src="/foto/producto.png" alt="Imagen producto" class="imagen-producto">
+    </div>
+    <div class="separador"></div>
+    <div class="contenido">
+
+      <p><strong>{{this.product.title}}</strong></p>
+      <p><b>Precio:</b> {{this.product.price}}</p>
+      <p><b>Categoría:</b> {{this.product.category}}</p>
+      <p><b>Descripción:</b> {{this.product.description}}</p>
+      <p><b>Cantidad:</b> {{this.quantity}}</p>
+      <button class="btn-delete" data-id="{{this._id}}">Borrar producto</button>
+
+    </div>
+  </div>
+  {{/each}}
+
+  <div style="display:flex; justify-content:center; margin-top:25px;">
+    <button class="btn-borrar-todo" id="btn-delete-all"
+      style="padding:10px 20px; background:#e74c3c; color:white; border:none; border-radius:5px; cursor:pointer;">
+      Borrar todos los productos
+    </button>
+  </div>
 
 </main>
 

@@ -1,6 +1,9 @@
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
+
+const collectionName = 'carts';
 const cartsSchema = new mongoose.Schema({
+  cartNumber: { type: Number, unique: true, required: true },  
   products: [
     {
       product: {
@@ -15,5 +18,6 @@ const cartsSchema = new mongoose.Schema({
   ]
 });
 
-const cartsModel = mongoose.model("carts", cartsSchema);
+const cartsModel = mongoose.model(collectionName, cartsSchema);
+
 export default cartsModel;
