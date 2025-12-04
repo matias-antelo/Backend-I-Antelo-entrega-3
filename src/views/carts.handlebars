@@ -20,7 +20,28 @@
       </button>
 
     </form>
+
+    <div style="display:flex; align-items:center; gap:15px; background:#f5f5f5; padding:15px; border-radius:10px;"
+      class="agregar-producto">
+
+
+      <select id="select-producto">
+        <option value="">Seleccione un producto</option>
+        {{#each productsList}}
+        <option value="{{this._id}}">{{this.title}}</option>
+        {{/each}}
+      </select>
+
+      <input type="number" id="input-cantidad" value="1" min="1">
+
+      <button style="padding:8px 16px; cursor:pointer; background:#3498db; color:white; border:none; border-radius:5px;"
+        class="btn-agregar-producto" data-cid="{{cartNumber}}">
+        Agregar al carrito
+      </button>
+    </div>
   </div>
+
+
 
   {{#if cartNumber}}
   <input type="hidden" id="cartNumberHidden" value="{{cartNumber}}">

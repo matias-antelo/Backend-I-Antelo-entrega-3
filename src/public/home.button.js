@@ -167,3 +167,41 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
+//boton para agregar o actualizar un producto en un carrito
+document.addEventListener('DOMContentLoaded', () => {
+  const btnAgregar = document.querySelector('.btn-agregar-producto');
+
+  if (!btnAgregar) return;
+
+  btnAgregar.addEventListener('click', async () => {
+    const cid = btnAgregar.dataset.cid;
+    const productId = document.getElementById('select-producto').value;
+    const quantity = parseInt(document.getElementById('input-cantidad').value);
+
+    if (!productId) {
+      alert("Seleccioná un producto");
+      return;
+    }
+
+    try {
+      const response = await fetch(`/carts/${cid}/product`, {
+        method: 'PUT',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ productId, quantity })
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert("Producto agregado/actualizado correctamente");
+        location.reload(); 
+      } else {
+        alert("Error: " + data.message);
+      }
+
+    } catch (error) {
+      console.error("Error al agregar producto:", error);
+    }
+  });
+});

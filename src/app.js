@@ -27,19 +27,4 @@ app.use('/styles', express.static(path.join(process.cwd(), 'src/views/layouts'))
 app.use("/", productsRoute);  
 app.use("/carts", cartsRoute);     
 
-
 app.listen(8080, () => {console.log(`Server ON`);})
-
-
-
-
-
-
-/*Se debe entregar
-
-
-PUT api/carts/:cid deberá actualizar todos los productos del carrito con un arreglo de productos.*/
-
-
-
-
